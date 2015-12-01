@@ -1,0 +1,71 @@
+:" base: spf13 ( https://github.com/spf13/spf13-vim )
+
+:" plugins: 
+:" indentLine ( https://github.com/Yggdroot/indentLine )
+:" scrollColors: ( https://github.com/vim-scripts/ScrollColors )
+
+
+set modifiable
+set background=dark
+syntax on
+syntax enable
+colorscheme lettuce
+set nospell
+
+
+:" HIGHLIGHT REACT SYNTAX
+au BufNewFile,BufRead *.jsx set filetype=javascript
+:highlight MyGroup ctermfg=yellow guifg=yellow
+:match MyGroup /this/
+:highlight React ctermfg=cyan guifg=cyan
+:match React /displayName\|render\|getDefaultProps\|getInitialState\|propTypes\|mixins\|statics\|componentWillMount\|componentWillUnmount\|shouldComponentUpdate\|componentDidUpdate\|componentWillReceiveProps\|componentDidMount\|contextTypes\|childContextTypes\|getChildContext\|defaultProps/
+
+
+:" CURSOR
+highlight Cursor guifg=yellow guibg=yellow
+
+
+:" SWAP FILE CRAP
+set shortmess+=A
+
+
+:" INDENT LINE
+let g:indentLine_color_gui = '#4e4e4e'
+let g:indentLine_char = '│'
+
+
+:" INDENT RULES
+
+set nowrap                      " Do not wrap long lines
+set autoindent                  " Indent at the same level of the previous line
+set shiftwidth=2                " Use indents of 4 spaces
+set expandtab                   " Tabs are spaces, not tabs
+set tabstop=2                   " An indentation every four columns
+set softtabstop=2               " Let backspace delete indent
+
+:" EASIER SPLIT WINDOW NAVIGATION
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+:" DISABLE HELP/F1 KEY ANNOYANCE
+:nmap <F1> <nop>
+:nmap <Help> <nop>
+
+
+:" MAC VIM SPECIFIC
+
+set macmeta
+set guioptions-=l
+set guioptions-=r
+set guioptions-=b
+set guioptions-=R
+set guioptions-=L
+
+:" Map Alt-up -> Start of line, Alt-down -> End of line
+map <M-Up> <Home>
+map <M-Down> <End>
+
+map <A-Up> <Home>
+map <A-Down> <End>
