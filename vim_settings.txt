@@ -65,9 +65,6 @@ nnoremap <CR> :noh<CR><CR>
 nmap <F1> <nop>
 nmap <Help> <nop>
 
-:"PASTING
-set paste
-
 :" yank and retain cursor position
 vmap y ygv<Esc>
 
