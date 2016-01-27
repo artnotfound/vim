@@ -51,11 +51,14 @@ set softtabstop=2               " Let backspace delete indent
 
 :" SPELL CHECK
 set nospell
+
+:" WINDOW NAVIGATION
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+:" REMOVE SEMI COLON COMMAND
 command NoSemi %s/;
 
 :"This unsets the "last search pattern" register by hitting return
